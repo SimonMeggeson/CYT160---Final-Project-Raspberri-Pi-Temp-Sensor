@@ -1,0 +1,10 @@
+# Command to publish to AWS
+mosquitto_pub -d \
+  -h a2afgo4w762a5h-ats.iot.us-east-1.amazonaws.com \
+  -p 8883 \
+  -t "demo/attack/synflood" \
+  -m "{\"event\": \"SYN flood simulation\", \"source\": \"raspberrypi\", \"severity\", \"high\", \"timestamp\": \"$(date)\"}" \
+  --id raspberrypi-client \
+  --cafile /home/group6/AmazonRootCA1.pem \
+  --cert /home/group6/Downloads/RaspberryPi.cert.pem \
+  --key /home/group6/Downloads/RaspberryPi.private.key
