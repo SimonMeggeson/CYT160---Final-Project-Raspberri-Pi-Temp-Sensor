@@ -1,0 +1,2 @@
+alert tcp any any -> $HOME_NET 1883 (msg:"High MQTT Traffic Rate"; threshold: type both, track by_dst, count 500, seconds 60; sid:1000001;)
+alert tcp any any -> $HOME_NET 1883 (msg:"Large MQTT Packet"; dsize:>1024; sid:1000002;) 
